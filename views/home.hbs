@@ -1,0 +1,33 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Upload File Demo</h1>
+
+</body>
+<!--
+method="post" : gửi dữ liệu trong phần thân (body) của request
+enctype="multipart/form-data" : kiểu đóng gói có chứa file - và là quy định bắt buộc nếu dùng
+thư viện Multer ở phía nodeJS
+-->
+
+<ul>
+    {{#each duLieu}}
+        <li>{{ this.name }}</li>
+    {{/each}}
+</ul>
+
+<form method="post" action="/upload" enctype="multipart/form-data">
+
+    <div>
+        <input type="text" name="username" placeholder="Nhap username...">
+        <input type="password" name="password" placeholder="Nhap password...">
+        <input type="file" name="avatar">
+        <input type="submit" value="Upload">
+    </div>
+
+</form>
+
+
+</html>
